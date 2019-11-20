@@ -1,0 +1,38 @@
+databaseChangeLog:
+    - changeSet:
+          id: inserts
+          author: Bruce
+          changes:
+              -   addDefaultValue:
+                      columnDataType: NUMBER(19,0)
+                      columnName: CO_SEQ_USER
+                      defaultValueSequenceNext: SQ_USER
+                      schemaName: PUBLIC
+                      tableName: TB_USER
+              - insert:
+                    tableName: TB_USER
+                    columns:
+                        - column:
+                              name: DS_USERNAME
+                              value: "Admin"
+                        - column:
+                              name: DS_EMAIL
+                              value: "admin@piedpier.com"
+              - insert:
+                    tableName: TB_USER
+                    columns:
+                        - column:
+                              name: DS_USERNAME
+                              value: "Bruce"
+                        - column:
+                              name: DS_EMAIL
+                              value: "bruce@piedpier.com"
+              - insert:
+                    tableName: TB_USER
+                    columns:
+                        - column:
+                              name: DS_USERNAME
+                              value: "Jared"
+                        - column:
+                              name: DS_EMAIL
+                              value: "jared@piedpier.com"

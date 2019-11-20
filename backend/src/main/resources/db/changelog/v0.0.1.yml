@@ -16,6 +16,11 @@ databaseChangeLog:
                               type: VARCHAR2(255)
                               constraints:
                                   nullable: false
+                        -   column:
+                                name: DS_EMAIL
+                                type: VARCHAR2(255)
+                                constraints:
+                                    nullable: false
 
               - createSequence:
                     sequenceName: SQ_USER
@@ -23,3 +28,90 @@ databaseChangeLog:
                     tableName: TB_USER
                     constraintName: PK_USER
                     columnNames: CO_SEQ_USER
+
+              - createTable:
+                    tableName: TB_LEAD
+                    columns:
+                        - column:
+                              name: CO_SEQ_LEAD
+                              type: NUMBER(19,0)
+                              constraints:
+                                  nullable: false
+                        - column:
+                              name: NO_LEAD
+                              type: VARCHAR2(255)
+                              constraints:
+                                  nullable: false
+                        - column:
+                              name: DS_EMAIL
+                              type: VARCHAR2(255)
+                              constraints:
+                                  nullable: false
+                        - column:
+                              name: DS_EMPRESA
+                              type: VARCHAR2(500)
+                              constraints:
+                                  nullable: false
+                        - column:
+                              name: DS_SITE
+                              type: VARCHAR2(500)
+                        - column:
+                              name: TP_STATUS
+                              type: NUMBER(1,0)
+                              constraints:
+                                  nullable: false
+                        - column:
+                              name: DS_NOTES
+                              type: VARCHAR2(5000)
+                              constraints:
+                                  nullable: false
+                        - column:
+                              name: CO_USER
+                              type: NUMBER(19,0)
+                              constraints:
+                                  nullable: false
+              - createSequence:
+                    sequenceName: SQ_LEAD
+              - addPrimaryKey:
+                    tableName: TB_LEAD
+                    constraintName: PK_LEAD
+                    columnNames: CO_SEQ_LEAD
+              - addForeignKeyConstraint:
+                    constraintName: FK_LEAD_USER
+                    referencedTableName: TB_USER
+                    referencedColumnNames: CO_SEQ_USER
+                    baseTableName: TB_LEAD
+                    baseColumnNames: CO_USER
+
+              - createTable:
+                    tableName: TB_PHONE
+                    columns:
+                        - column:
+                              name: CO_SEQ_PHONE
+                              type: NUMBER(19,0)
+                              constraints:
+                                  nullable: false
+                        - column:
+                              name: DS_NUMBER
+                              type: VARCHAR2(255)
+                              constraints:
+                                  nullable: false
+                        -   column:
+                                name: CO_LEAD
+                                type: NUMBER(19,0)
+                                constraints:
+                                    nullable: false
+
+              - createSequence:
+                    sequenceName: SQ_PHONE
+              - addPrimaryKey:
+                    tableName: TB_PHONE
+                    constraintName: PK_PHONE
+                    columnNames: CO_SEQ_PHONE
+              - addForeignKeyConstraint:
+                    constraintName: FK_PHONE_LEAD
+                    referencedTableName: TB_LEAD
+                    referencedColumnNames: CO_SEQ_LEAD
+                    baseTableName: TB_PHONE
+                    baseColumnNames: CO_LEAD
+

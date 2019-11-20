@@ -2,3 +2,7 @@ databaseChangeLog:
     - include:
           file: v0.0.1.yml
           relativeToChangelogFile: true
+    - include:
+          file: v0.0.1-dml.yml
+          relativeToChangelogFile: true
+
