@@ -1,0 +1,25 @@
+databaseChangeLog:
+    - changeSet:
+          id: User
+          author: Bruce
+          changes:
+              - createTable:
+                    tableName: TB_USER
+                    columns:
+                        - column:
+                              name: CO_SEQ_USER
+                              type: NUMBER(19,0)
+                              constraints:
+                                  nullable: false
+                        - column:
+                              name: DS_USERNAME
+                              type: VARCHAR2(255)
+                              constraints:
+                                  nullable: false
+
+              - createSequence:
+                    sequenceName: SQ_USER
+              - addPrimaryKey:
+                    tableName: TB_USER
+                    constraintName: PK_USER
+                    columnNames: CO_SEQ_USER
