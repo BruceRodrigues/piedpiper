@@ -45,7 +45,7 @@ public class Lead {
 	@Column(name = "DS_SITE")
 	private String site;
 
-	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "lead", fetch = FetchType.LAZY)
 	private List<Phone> telefones = new ArrayList<>();
 
 	@Enumerated

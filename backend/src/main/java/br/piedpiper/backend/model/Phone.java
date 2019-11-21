@@ -28,9 +28,9 @@ public class Phone {
 	private Long id;
 
 	@Column(name = "DS_NUMBER")
-	private String username;
+	private String number;
 
 	@ManyToOne
-	@JoinColumn(name = "CO_USER")
-	private User user;
+	@JoinColumn(name = "CO_LEAD")
+	private Lead lead;
 }
