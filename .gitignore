@@ -32,3 +32,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Node ###
+**/node_modules
+**/coverage
+**/npm-debug.log
+**/bower_components
+**/target
+**/node
+**/build
