@@ -1,7 +1,9 @@
+dist: trusty
+sudo: required
 matrix:
   include:
     - language: java
-  include:
+      jdk: oraclejdk8
     - language: node_js
       node_js:
-        - 10
+        - "node"
