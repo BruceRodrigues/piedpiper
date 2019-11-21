@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='App'>
       <Router>
-        <Route path='/login' component={LoginView} />
+        <Route path='/' component={LoginView} />
       </Router>
     </div>
   )
