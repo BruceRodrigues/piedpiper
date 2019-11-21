@@ -26,6 +26,7 @@
     <modules>
         <module>backend</module>
         <module>frontend</module>
+        <module>app</module>
     </modules>
 
     <dependencyManagement>
@@ -38,6 +39,11 @@
             <dependency>
                 <groupId>br.piedpiper</groupId>
                 <artifactId>frontend</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>br.piedpiper</groupId>
+                <artifactId>app</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
