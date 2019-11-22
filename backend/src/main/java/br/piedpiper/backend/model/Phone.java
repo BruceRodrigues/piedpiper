@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Data
 @Entity
 @Table(name = "TB_PHONE")
@@ -30,6 +32,7 @@ public class Phone {
 	@Column(name = "DS_NUMBER")
 	private String number;
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "CO_LEAD")
 	private Lead lead;
