@@ -51,7 +51,7 @@ public class Lead {
 
 	@Enumerated
 	@Column(name = "TP_STATUS")
-	private LeadStatus status;
+	private LeadStatus status = LeadStatus.OPEN;
 
 	@Column(name = "DS_NOTES")
 	private String anotacoes;

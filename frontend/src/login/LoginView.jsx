@@ -9,10 +9,10 @@ import {
   TextField,
   Typography,
 } from '@material-ui/core'
-import { Link as RouterLink, withRouter } from 'react-router-dom'
 
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import { blue } from '@material-ui/core/colors'
 import { createStyles } from '@material-ui/core/styles'
 import { useHistory } from 'react-router-dom'
@@ -76,26 +76,24 @@ export default () => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button fullWidth size='large' variant='contained' color='primary'>
+          <Button
+            fullWidth
+            size='large'
+            variant='contained'
+            color='primary'
+            onClick={() => history.push('/lead')}
+          >
             Entrar
           </Button>
         </Grid>
         <Grid container justify='space-between'>
           <Grid item>
-            <Link
-              variant='body2'
-              component={RouterLink}
-              onClick={() => history.push('/remember')}
-            >
+            <Link variant='body2' component={RouterLink}>
               Esqueceu sua senha?
             </Link>
           </Grid>
           <Grid item>
-            <Link
-              variant='body2'
-              component={RouterLink}
-              onClick={() => history.push('/main')}
-            >
+            <Link variant='body2' component={RouterLink}>
               Cadastre-se
             </Link>
           </Grid>

@@ -1,0 +1,9 @@
+.modal {
+  width: 50%;
+  height: 400px;
+  transform: translate(50%, 20%);
+}
+
+.content {
+  height: 100%;
+}
